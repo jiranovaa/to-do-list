@@ -1,14 +1,15 @@
 body {
-    background-color:#50e3c2;
+    background-color: #9dd8cb;
+    margin: 0px;
 }
 .container {
     font-family: 'Baloo Paaji 2', cursive;
     color: #48494B;
     background-color: #f7f7f7;
-    box-sizing: border-box;
-    width: 300px;
+    width: 500px;
     margin: 50px auto;
     padding: 2px 30px;
+    box-sizing: border-box;
     border: 1px solid #d3d3d3;
     border-radius: 2px;
 }
@@ -19,13 +20,14 @@ h1 {
 
 .todo {
     width: 100%;
-    border: 2px solid #d3d3d3;
-    border-radius: 2px;
     height: 30px;  
-    display: flex;
-    box-sizing: border-box;
     padding: 0;
     margin: 0px auto;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #d3d3d3;
+    border-radius: 2px;
 }
 
 #task {
@@ -34,38 +36,81 @@ h1 {
     color: inherit;
     width: 80%;
     height: 100%;
-    border: none;
     margin: 0;
     padding: 0 0 0 4px;
+    box-sizing: border-box;
+    border: none;
+}
+
+#task.highlighted {
+    border: solid 2px #CC397B;
 }
 
 #add {
     font-family: inherit;
+    font-size: 0.9em;
     font-weight: 600;
     color: #f7f7f7;
+    background-color: #CC397B;
     width: 20%;
     height: 100%;
-    border: none;
     margin: 0;
     padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.alert-container {
     background-color: #CC397B;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: -28px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 2px;
+
+}
+
+.alert-message {
+    font-size: 0.7em;
+    font-style: italic;
+    color: #f7f7f7;
+    background-color: #CC397B;
+    margin: 0px;
+    padding: 0px 5px;
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    position: absolute;
+    bottom: -5px;
+    left: 3%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #CC397B;
 }
 
 .todos-container {
+    padding: 10px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 0px;
 }
 
 ul {
-    list-style-type: none;
-    list-style-position: inside;
-    padding: 0;
+    width: 100%;
     margin: 0;
+    padding: 0;
     position: relative;
     flex: 0 0 100%;
-    width: 100%;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+.done {
+    color: #a0a1a4;
 }
 
 .buttons {
@@ -80,7 +125,7 @@ ul {
     cursor: pointer;
 }
 
-.tick-button {
+.tick-button, .tick-button2 {
     height: 20px;
     cursor: pointer;
 }
